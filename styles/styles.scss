@@ -1,0 +1,374 @@
+@import "_reset.scss";
+@import "_variable.scss";
+@import "mixin.scss";
+
+@media screen and (max-width: 780px) {
+
+  header {
+
+    display: block;
+    flex-direction: row;
+    width: 100%;
+    height: 44px;
+
+      img {
+
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin: 10px 0px 10px 16px;
+    }
+
+      input {
+
+      display: none;
+
+      &:checked ~ ul {
+
+        max-height: 224px;
+      }
+
+      &:checked ~ label {
+
+        transform: rotate(45deg);
+        transition-timing-function: ease-out;
+        transition: 0.4s;
+      }
+
+      &:checked ~ label .one {
+
+        background-color: transparent;
+      }
+
+      &:checked ~ label .three {
+
+        transform: rotate(90deg);
+        top: -4px;
+      }
+    }
+
+      label {
+
+      float: right;
+      margin: 15px 19px 15px 0px;
+      cursor: pointer;
+
+      span {
+
+        position: relative;
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 2px;
+        background-color: $primary-color;
+      }
+    }
+
+      ul {
+
+        position: relative;
+        width: 100%;
+        list-style-type: none;
+        overflow: hidden;
+        clear: both;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        background-color: $tertiary-color;
+
+        li {
+
+          a {
+
+            display: block;
+            text-decoration: none;
+            padding: 16px 0px 8px 16px;
+            line-height: 28px;
+            font-family: $secondary-font;
+            color: $secondary-color;
+            font-style: 16px;
+            cursor: pointer;
+          }
+        }
+    }
+  }
+
+  .page-header {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 303px;
+    color: $primary-color;
+
+    h1 {
+
+      margin: 29px 0px 16px 16px;
+      font-family: $primary-font;
+      font-size: 36px;
+      line-height: 42px;
+
+        .line {
+          text-decoration: line-through;
+        }
+    }
+
+    p {
+
+      margin: 0px 16px 36px 16px;
+      width: auto;
+      height: 66px;
+      font-size: 14px;
+      line-height: 22px;
+      font-family: $secondary-font;
+
+      .desktop {
+        display: none;
+      }
+    }
+
+    a {
+
+      text-decoration: none;
+
+        div {
+          @include button;
+          font-size: 16px;
+          line-height: 22px;
+          width: 288px;
+          height: 48px;
+          margin: 0px 16px 24px 16px;
+        }
+    }
+
+  }
+
+  .episodes {
+
+    width: 100%;
+    height: 1203px;
+    display: inline-block;
+    margin-top: 24px;
+
+      .background {
+        @include rhombus;
+        width: 100%;
+        height: 1203px;
+      }
+
+      h2 {
+
+        position: relative;
+        font-family: $primary-font;
+        color: $secondary-color;
+        font-size: 36px;
+        width: 157px;
+        height: 42px;
+        line-height: 42px;
+        padding: 64px 147px 21px 16px;
+      }
+
+      .iframes {
+
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+          iframe {
+
+            width: 298px;
+            height: 232px;
+            padding: 11px;
+            margin: auto;
+          }
+      }
+
+  }
+
+  .phone {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      img {
+
+        position: relative;
+        width: 360px;
+        height: 519px;
+        top: -40px;
+      }
+
+      h2 {
+
+        width: 288px;
+        height: 84px;
+        font-family: $primary-font;
+        color: $primary-color;
+        font-size: 36px;
+        line-height: 42px;
+        margin: auto;
+      }
+
+      p {
+
+        width: auto;
+        height: 254px;
+        font-family: $secondary-font;
+        color: $primary-color;
+        font-size: 14px;
+        line-height: 22px;
+        padding: 11px;
+      }
+  }
+
+  .guests {
+
+    display: flex;
+    flex-direction: column;
+
+      h2 {
+
+        width: 288px;
+        height: 84px;
+        font-family: $primary-font;
+        color: $primary-color;
+        font-size: 36px;
+        line-height: 42px;
+        margin: 54px 16px 14px 16px;
+      }
+
+      img {
+
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+  }
+
+  .topics {
+
+    width: 100%;
+    height: 980px;
+    position: relative;
+    display: block;
+
+      h2 {
+
+        font-family: $primary-font;
+        color: $primary-color;
+        font-size: 36px;
+        line-height: 42px;
+        width: 288px;
+        height: 84px;
+        margin: 48px 16px 37px 16px;
+      }
+
+      .icons {
+          display: block;
+          text-align: center;
+
+          div {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+
+              h3 {
+
+                font-family: $primary-font;
+                font-size: 24px;
+                line-height: 32px;
+                font-weight: 600;
+                margin-bottom: 49px;
+              }
+
+              img {
+
+                margin-bottom: 13px;
+              }
+          }
+      }
+  }
+
+  .news {
+
+    @include polygon;
+    width: 100%;
+    height: 341px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+      h4 {
+        
+        width: 288px;
+        height: 126px;
+        font-family: $primary-font;
+        color: $secondary-color;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        margin: 64px auto 0px auto;
+      }
+
+      a {
+        text-decoration: none;
+
+          div {
+            
+            @include button;
+            width: 288px;
+            height: 48px;
+            margin: 36px auto 67px auto;
+            font-size: 16px;
+            line-height: 22px;
+          }
+      }
+  }
+
+  footer {
+
+    width: 100%;
+    height: 120px;
+    background-color: $secondary-color;
+    display: flex;
+    flex-wrap: wrap;
+
+      p {
+
+        font-family: $secondary-font;
+        color: $primary-color;
+        font-size: 14px;
+        line-height: 22px;
+        padding-top: 24px;
+        text-align: center;
+        margin: auto;
+      }
+
+      div {
+
+        display: flex;
+        justify-content: center;
+        margin: auto;
+
+          a {
+
+            i {
+
+              padding: 18px;
+              line-height: 28px;
+              color: $primary-color;
+            }
+          }
+      }
+  }
+
+}
+
+@media screen and (min-width: 781px) {
+  @import "_desktop.scss";
+}

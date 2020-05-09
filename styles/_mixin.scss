@@ -1,0 +1,27 @@
+@mixin button {
+  background-color: $quaternary-color;
+  font-family: $secondary-font;
+  font-weight: 500;
+  color: $primary-color;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+    color: $secondary-color;
+  }
+}
+
+@mixin rhombus {
+  transform: skew(0deg, -5deg);
+  background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+  position: absolute;
+  z-index: -1;
+}
+
+@mixin polygon {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+  background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+}
